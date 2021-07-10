@@ -7,7 +7,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: buildAppBar(),
+      // now the body is build
+      body: SingleChildScrollView(
+          child: Column(
+        children: [],
+      )),
     );
   }
 }
