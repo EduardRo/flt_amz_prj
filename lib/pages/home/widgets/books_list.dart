@@ -65,7 +65,9 @@ class BuildBookList extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => BookPage(),
+                                builder: (context) => BookPage(
+                                  book: books[index],
+                                ),
                               ),
                             );
                           },

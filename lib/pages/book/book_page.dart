@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flt_amz_prj/models/book_model.dart';
 
 class BookPage extends StatefulWidget {
-  const BookPage({Key? key}) : super(key: key);
+  BookPage({required this.book});
+  final BookModel book;
 
   @override
   _BookPageState createState() => _BookPageState();
@@ -15,7 +17,9 @@ class _BookPageState extends State<BookPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.keyboard_arrow_left_outlined,
             color: Colors.black87,
