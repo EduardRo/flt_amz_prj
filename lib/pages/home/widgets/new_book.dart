@@ -100,6 +100,9 @@ class BuildNewBook extends StatelessWidget {
           ),
         ),
         // we will add some space later
+        SizedBox(
+          height: MediaQuery.of(context).padding.bottom,
+        )
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flt_amz_prj/constants.dart';
 import 'package:flt_amz_prj/models/book_model.dart';
+import 'package:flt_amz_prj/pages/book/book_page.dart';
 import 'package:flutter/material.dart';
 
 final List<BookModel> books = BookModel.books;
@@ -61,7 +62,12 @@ class BuildBookList extends StatelessWidget {
                             left: index == 0 ? Constants.kPadding : 0),
                         child: InkWell(
                           onTap: () {
-                            // must be done
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BookPage(),
+                              ),
+                            );
                           },
                           child: Column(
                             children: [

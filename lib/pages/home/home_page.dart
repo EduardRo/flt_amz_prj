@@ -1,4 +1,5 @@
 import 'package:flt_amz_prj/pages/home/widgets/books_list.dart';
+import 'package:flt_amz_prj/pages/home/widgets/fab.dart';
 import 'package:flt_amz_prj/pages/home/widgets/header.dart';
 import 'package:flt_amz_prj/pages/home/widgets/icons_list.dart';
 import 'package:flt_amz_prj/pages/home/widgets/navigation_bar.dart';
@@ -16,16 +17,20 @@ class HomePage extends StatelessWidget {
       appBar: buildAppBar(),
       // now the body is build
       body: SingleChildScrollView(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ...buildHeader(),
-          buildSearchBar(),
-          buildIconsList(),
-          BuildBookList(),
-          BuildNewBook(),
-        ],
-      )),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ...buildHeader(),
+            buildSearchBar(),
+            buildIconsList(),
+            BuildBookList(),
+            BuildNewBook(),
+          ],
+        ),
+      ),
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: BuildFAB(),
       bottomNavigationBar: buildNavigationBar(),
     );
   }
