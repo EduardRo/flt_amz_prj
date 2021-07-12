@@ -1,4 +1,5 @@
 import 'package:flt_amz_prj/pages/book/widgets/book_display.dart';
+import 'package:flt_amz_prj/pages/book/widgets/description.dart';
 import 'package:flutter/material.dart';
 import 'package:flt_amz_prj/models/book_model.dart';
 import 'package:flt_amz_prj/constants.dart';
@@ -29,9 +30,13 @@ class _BookPageState extends State<BookPage> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                widget.book.favorite = !widget.book.favorite;
+              });
+            },
             icon: Icon(
-              Icons.favorite,
+              widget.book.favorite ? Icons.favorite : Icons.favorite_border,
               color: Colors.red,
             ),
           ),
@@ -47,6 +52,7 @@ class _BookPageState extends State<BookPage> {
             child: Column(
               children: [
                 ...buildBookDisplay(book: widget.book),
+                ...buildDescription()
               ],
             ),
           ),
