@@ -1,5 +1,7 @@
+import 'package:flt_amz_prj/pages/book/widgets/book_display.dart';
 import 'package:flutter/material.dart';
 import 'package:flt_amz_prj/models/book_model.dart';
+import 'package:flt_amz_prj/constants.dart';
 
 class BookPage extends StatefulWidget {
   BookPage({required this.book});
@@ -34,6 +36,21 @@ class _BookPageState extends State<BookPage> {
             ),
           ),
         ],
+      ),
+      body: SafeArea(
+        child: Container(
+          height: double.infinity,
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: Constants.kPadding * 4,
+            ),
+            child: Column(
+              children: [
+                ...buildBookDisplay(book: widget.book),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
