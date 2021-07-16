@@ -9,6 +9,7 @@ class BuildExp1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Exp Demo',
+      debugShowCheckedModeBanner: false,
       home: BuildScafforlWidget(),
     );
   }
@@ -26,6 +27,7 @@ class BuildScafforlWidget extends StatelessWidget {
         ),
       ),
       body: Container(),
+
       // this is making the bar down
       bottomNavigationBar: BottomAppBar(
         child: Row(
