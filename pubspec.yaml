@@ -33,6 +33,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  http: any
 
 flutter_icons:
   android: "launcher_icon"
