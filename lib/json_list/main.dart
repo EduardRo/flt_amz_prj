@@ -30,14 +30,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Future<List<MenuList>> _getMenuLists() async {
-    var data = await http.get(
-        Uri.parse("https://www.matematicon.ro/_teste-grila-json/menu.php"));
+    var data = await http.get(Uri.parse(
+        "https://www.matematicon.ro/_teste-grila-json/menu_clasa.php?cls=11"));
     var jsonData = json.decode(data.body);
 
     List<MenuList> menus = [];
     for (var u in jsonData) {
-      MenuList menu = MenuList(u["idtest"], u["codclasa"], u["codmaterie"],
-          u["codserie"], u["denumireserie"]);
+      MenuList menu = MenuList(
+          u["codclasa"], u["codmaterie"], u["codserie"], u["denumireserie"]);
       menus.add(menu);
     }
     print(menus.length);
@@ -89,9 +89,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                         ),
                                       ),
                                       Container(
-                                          color: Colors.amber,
-                                          child: Text(
-                                              snapshot.data[index].codclasa)),
+                                        color: Colors.amber,
+                                        child:
+                                            Text(snapshot.data[index].codclasa),
+                                      ),
+                                      Container(
+                                        color: Colors.amber,
+                                        child: Text(
+                                            snapshot.data[index].codmaterie),
+                                      ),
                                     ]),
                               ))),
                     );
@@ -105,12 +111,10 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class MenuList {
-  final String idtest;
   final String codclasa;
   final String codmaterie;
   final String codserie;
   final String denumireserie;
 
-  MenuList(this.idtest, this.codclasa, this.codmaterie, this.codserie,
-      this.denumireserie);
+  MenuList(this.codclasa, this.codmaterie, this.codserie, this.denumireserie);
 }
