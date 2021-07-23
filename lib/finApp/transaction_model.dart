@@ -1,5 +1,3 @@
-import 'package:meta/meta.dart';
-
 class TransactionModel {
   final String logo;
   final String name;
