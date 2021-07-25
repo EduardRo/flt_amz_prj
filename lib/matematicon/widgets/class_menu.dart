@@ -11,9 +11,15 @@ class ClassMenu extends StatelessWidget {
         child: Container(
           child: Column(children: [
             Container(
-              child: SizedBox(child: Text('CLASA a IX-a')),
+              child: Text('CLASA a IX-a'),
             ),
-            Text('CLASA a X-a'),
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child:
+                    TextButton(onPressed: () => {}, child: Text('CLASA a X-a')),
+              ),
+            ),
             Text('CLASA a XI-a'),
             Text('CLASA a XII-a')
           ]),
