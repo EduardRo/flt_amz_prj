@@ -22,6 +22,85 @@ class MyApp extends StatelessWidget {
             children: [
               Flexible(child: MyHomePage()),
               Flexible(child: Clasa10()),
+              Center(
+                child: Container(
+                  height: 120.0,
+                  width: 120.0,
+                  color: Colors.redAccent,
+                  child: const Align(
+                    alignment: Alignment(2.2, 0.6),
+                    child: FlutterLogo(
+                      size: 60,
+                    ),
+                  ),
+                ),
+              ),
+              Center(
+                child: Container(
+                  height: 120.0,
+                  width: 120.0,
+                  color: Colors.blue[50],
+                  child: Align(
+                    alignment: FractionalOffset(0.2, 0.6),
+                    child: FlutterLogo(
+                      size: 60,
+                    ),
+                  ),
+                ),
+              ),
+              Flexible(
+                  child: Container(
+                child: Row(
+                  children: [
+                    Flexible(
+                        flex: 2,
+                        child: Container(
+                          color: Colors.cyan,
+                        )),
+                    Flexible(
+                        flex: 1,
+                        child: Container(
+                          color: Colors.black,
+                        )),
+                    Flexible(
+                      flex: 3,
+                      child: Container(
+                        color: Colors.red,
+                      ),
+                    ),
+                  ],
+                ),
+              )),
+              Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.all(1.0),
+                  child: ListView(
+                    padding: const EdgeInsets.all(8),
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          print("first tapped");
+                        },
+                        child: Container(
+                          height: 50,
+                          color: Colors.amber[600],
+                          child: const Center(child: Text('Entry A')),
+                        ),
+                      ),
+                      Container(
+                        height: 50,
+                        color: Colors.amber[500],
+                        child: const Center(child: Text('Entry B')),
+                      ),
+                      Container(
+                        height: 50,
+                        color: Colors.amber[100],
+                        child: const Center(child: Text('Entry C')),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -88,9 +167,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     ),
                                   ),
                                 ),
-                                Container(
+                                Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  color: Colors.blueAccent,
                                   child: Text(
                                     snapshot.data[index].codclasa,
                                     style: TextStyle(
